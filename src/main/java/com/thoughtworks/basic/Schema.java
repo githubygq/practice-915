@@ -4,24 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Schema {
-    List<FlagSchema> flagSchemas =new ArrayList<FlagSchema>();
+    List<FlagSchema> flagSchemas = new ArrayList<FlagSchema>();
 
     public Schema(List<FlagSchema> flagSchemas) {
         this.flagSchemas = flagSchemas;
     }
 
-    public String getTypeOf(String flag){
-        for (FlagSchema flagSchema :flagSchemas) {
-            if(flagSchema.getFlag().equals(flag)){
+    public ValueHandler getTypeOf(String flag) {
+        for (FlagSchema flagSchema : flagSchemas) {
+            if (flagSchema.getFlag().equals(flag)) {
                 return flagSchema.getType();
             }
         }
-        return "非法的flag";
+        return null;
     }
 
-    public Object getDefaultValueOf(String flag){
-        for (FlagSchema flagSchema :flagSchemas) {
-            if(flagSchema.getFlag().equals(flag)){
+    public Object getDefaultValueOf(String flag) {
+        for (FlagSchema flagSchema : flagSchemas) {
+            if (flagSchema.getFlag().equals(flag)) {
                 return flagSchema.getDefaultValue();
             }
         }

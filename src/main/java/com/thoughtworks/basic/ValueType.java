@@ -9,11 +9,11 @@ public class ValueType {
         this.valueFactory = valueFactory;
     }
 
-    public Object getType(){
+    public ValueHandler getType() {
         return valueFactory.creat(valueType);
     }
 
-    public Object getDefaultType(){
+    public Object getDefaultType() {
         return valueFactory.getDefault(valueType);
     }
 }

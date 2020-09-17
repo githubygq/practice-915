@@ -8,8 +8,8 @@ public class ValueFactory {
             case "integer":
                 return new IntegerValueHandler();
             default:
-                return new StringValueHandler();
         }
+                return new StringValueHandler();
     }
 
     public Object getDefault(String flagType) {

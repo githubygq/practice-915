@@ -9,15 +9,15 @@ public class FlagSchema {
         this.valueType = valueType;
     }
 
-    String getType(){
-        return (String) valueType.getType();
+    ValueHandler getType() {
+        return valueType.getType();
     }
 
-    Object getDefaultValue(){
+    Object getDefaultValue() {
         return valueType.getDefaultType();
     }
 
-    String getFlag(){
+    String getFlag() {
         return this.flag;
     }
 }
