@@ -74,6 +74,7 @@ public class Args {
                 worngMessage.append("重复的flag！");
                 return false;
             }
+            //添加缺失的指令
             if(countMap.get(key)==0){
                 argPairs.add(new Arg(key,schema.getDefaultValueOf(key).toString()));
             }
@@ -93,6 +94,7 @@ public class Args {
                     Boolean aBoolean = (Boolean) getValueOf(key).handle(value);
                     //代表原来的字符串是true或false
                     boolean result= ("true".equals(value)||"false".equals(value));
+                    //排除本身就是false或者默认为false这种特殊情况
                     if (!(aBoolean)&&!result) {
                         worngMessage.append("-l 命令为非布尔类型！");
                         return false;
